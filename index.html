@@ -20,6 +20,7 @@
             color: #e0e0e0;
             overflow-x: hidden;
             perspective: 1000px;
+            padding-top: 70px; /* Add padding to prevent overlap with fixed header */
         }
 
         .container {
@@ -364,10 +365,113 @@
             .feature-card:hover {
                 transform: translateY(-5px) scale(1.01);
             }
+            body {
+                padding-top: 60px; /* Adjust padding for smaller header */
+            }
+
+            header {
+                padding: 0.6rem 0;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* Header and Navigation Styles */
+        header {
+            position: fixed; /* Stick to the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85); /* Dark semi-transparent background */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000; /* Ensure it's above other content */
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 255, 238, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: #00ffee;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem; /* Spacing between nav items */
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            position: relative; /* For hover effect */
+            padding-bottom: 5px; /* Space for underline */
+        }
+
+        nav a::after { /* Underline hover effect */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #00ff88, #00ffee);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active /* Style for active link (optional) */
+        {
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0, 255, 238, 0.5);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
         }
     </style>
 </head>
 <body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">SPIKY</a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#how-to-use">How To Use</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <section class="section hero visible">
         <h1 class="product-title">SPIKY<br>HAIR WAX</h1>
         <img src="./images/img_2.jpg" alt="Spiky Hair Wax Product" class="product-image">
@@ -508,10 +612,13 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { 
+            threshold: 0.1,
+            rootMargin: "-70px 0px -50% 0px" // Adjust rootMargin to trigger active state correctly with fixed header
+        });
 
         document.querySelectorAll('.section').forEach((section) => {
-            if (!section.classList.contains('hero')) {
+            if (!section.classList.contains('hero') && section.id) {
                 observer.observe(section);
             }
         });
@@ -522,7 +629,12 @@
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
                         behavior: 'smooth'
                     });
                 }
