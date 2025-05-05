@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPIKY Hair Wax - Ultimate Matte Hold</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Add a subtle background pattern */
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%),
+                        url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%231f1f1f" fill-opacity="0.1"%3E%3Cpath d="M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            color: #e0e0e0; /* Slightly softer white */
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            min-height: 80vh; /* Adjust height slightly */
+            padding: 6rem 0; /* Adjust padding */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            border-bottom: 1px solid rgba(0, 255, 238, 0.05); /* Subtle separator */
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            min-height: auto; /* Footer doesn't need full height */
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a2a2a 0%, #0a0a0a 100%);
+            min-height: 100vh; /* Keep hero full height */
+            position: relative; /* For potential pseudo-elements */
+        }
+
+        .product-title {
+            font-size: clamp(3rem, 8vw, 5rem); /* Responsive font size */
+            margin-bottom: 0.5rem; /* Reduced margin */
+            line-height: 1.1;
+            background: linear-gradient(45deg, #00ff88, #00ffee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 255, 238, 0.4)); /* Enhanced glow */
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: #00ffee;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 0.5rem;
+            color: #b0b0b0;
+        }
+
+        .highlight {
+            color: #00ff88;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .product-image {
+            width: clamp(250px, 50vw, 350px); /* Responsive image size */
+            margin: 2rem 0;
+            filter: drop-shadow(0 0 40px rgba(0, 255, 238, 0.25));
+            transform: rotate(-5deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero:hover .product-image {
+            transform: rotate(0deg) scale(1.05); /* Subtle hover effect */
+        }
+
+        /* Features Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #00ffee;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger cards */
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03); /* More subtle background */
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 238, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-align: center;
+        }
+
+        .feature-card i { /* Icon styling */
+            font-size: 2.5rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 255, 238, 0.1);
+        }
+
+        /* Why Choose Us Section */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-us-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 3px solid #00ff88;
+            transition: background-color 0.3s ease;
+        }
+
+        .why-us-item:hover {
+            background-color: rgba(0, 255, 136, 0.05);
+        }
+
+        .why-us-item i {
+            font-size: 2rem;
+            color: #00ffee;
+            min-width: 30px; /* Ensure alignment */
+        }
+
+        .why-us-item h4 {
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .why-us-item p {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+
+        /* How To Use Section */
+        .how-to-use-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 238, 0.08);
+        }
+
+        .step:nth-child(odd) {
+            flex-direction: row-reverse; /* Alternate layout */
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00ff88;
+            opacity: 0.5;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .step-content h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #00ffee;
+        }
+
+        .step-content p {
+            color: #b0b0b0;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 255, 238, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer; /* Indicate interactivity */
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 255, 238, 0.15);
+        }
+
+        /* Testimonials Section */
+        .testimonial-slider { /* Basic placeholder */
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 238, 0.1);
+        }
+        .testimonial-slider p {
+             font-style: italic;
+             color: #b0b0b0;
+             margin-bottom: 1rem;
+        }
+        .testimonial-slider span {
+            font-weight: 600;
+            color: #00ff88;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem; /* Add space before footer */
+            background-color: #111; /* Slightly different dark shade */
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(45deg, #00ff88, #00ffee);
+            color: #000;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block; /* Ensure margin-top works */
+            text-decoration: none; /* If used as a link */
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 255, 238, 0.2);
+        }
+
+        /* Animations */
+        @keyframes pulse-glow {
+            0% { filter: drop-shadow(0 0 15px rgba(0, 255, 238, 0.4)); }
+            50% { filter: drop-shadow(0 0 25px rgba(0, 255, 238, 0.6)); }
+            100% { filter: drop-shadow(0 0 15px rgba(0, 255, 238, 0.4)); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply fadeInUp to elements within visible sections */
+        .section.visible .feature-card,
+        .section.visible .why-us-item,
+        .section.visible .step,
+        .section.visible .gallery-item,
+        .section.visible .testimonial-slider {
+            animation: fadeInUp 0.6s ease-out forwards;
+            /* Stagger animation */
+        }
+
+        .section.visible .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .section.visible .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .section.visible .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        /* Add more stagger delays as needed */
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .features-grid, .why-us-grid, .gallery-grid {
+                grid-template-columns: 1fr; /* Stack on smaller screens */
+                gap: 1.5rem;
+            }
+            .step {
+                flex-direction: column !important; /* Stack step content */
+                text-align: center;
+            }
+            .step-number {
+                margin-bottom: 1rem;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .cta-button {
+                padding: 0.8rem 2.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="section hero visible"> <!-- Start hero visible -->
+        <h1 class="product-title">SPIKY<br>HAIR WAX</h1>
+        <img src="./images/img_2.jpg" alt="Spiky Hair Wax Product" class="product-image">
+        <h2>ULTIMATE MATTE HOLD</h2>
+        <p>Craft your perfect messy, textured style that lasts all day.</p>
+        <p class="highlight">100g / 3.53 oz</p>
+        <a href="#features" class="cta-button">EXPLORE FEATURES</a> <!-- Changed button text & link -->
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-signature"></i> <!-- Icon added -->
+                    <h3>Ultimate Matte Finish</h3>
+                    <p>Achieve a zero-shine, natural look. No grease, no residue.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i> <!-- Icon added -->
+                    <h3>24h Strong Hold</h3>
+                    <p>Locks your style in place through any activity, day or night.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i> <!-- Icon added -->
+                    <h3>Natural Ingredients</h3>
+                    <p>Formulated with hair-nourishing botanicals. Free from harsh chemicals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="section">
+        <div class="container">
+            <h2 class="section-title">Why SPIKY Wax?</h2>
+            <div class="why-us-grid">
+                <div class="why-us-item">
+                    <i class="fas fa-hand-rock"></i>
+                    <div>
+                        <h4>Unbeatable Texture</h4>
+                        <p>Creates definition and separation for that perfect spiky or messy look.</p>
+                    </div>
+                </div>
+                <div class="why-us-item">
+                    <i class="fas fa-tint-slash"></i>
+                    <div>
+                        <h4>Washes Out Easily</h4>
+                        <p>Strong hold doesn't mean difficult removal. Cleans out with a simple wash.</p>
+                    </div>
+                </div>
+                <div class="why-us-item">
+                    <i class="fas fa-recycle"></i>
+                    <div>
+                        <h4>Reworkable Style</h4>
+                        <p>Need a change mid-day? Our wax allows for easy restyling without reapplication.</p>
+                    </div>
+                </div>
+                 <div class="why-us-item">
+                    <i class="fas fa-wind"></i>
+                    <div>
+                        <h4>Weather Resistant</h4>
+                        <p>Stands up to humidity and wind, keeping your look intact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Use Section -->
+    <section id="how-to-use" class="section">
+        <div class="container">
+            <h2 class="section-title">Get The Look</h2>
+            <div class="how-to-use-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h4>Scoop</h4>
+                        <p>Start with a small, pea-sized amount of wax. Warm it between your palms until smooth.</p>
+                        <!-- Placeholder for image/icon -->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h4>Apply</h4>
+                        <p>Work evenly through dry or slightly damp hair, starting from the roots to tips.</p>
+                        <!-- Placeholder for image/icon -->
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h4>Style</h4>
+                        <p>Define your spikes, create texture, or shape your desired messy look. Add more product if needed for extra hold.</p>
+                        <!-- Placeholder for image/icon -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Style Inspiration</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="./images/img_3.jpg" alt="Spiky Hairstyle 1"> <!-- Placeholder -->
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/img_4.jpg" alt="Textured Hairstyle 2"> <!-- Placeholder -->
+                </div>
+                <div class="gallery-item">
+                    <img src="./images/img_5.jpg" alt="Messy Look Hairstyle 3"> <!-- Placeholder -->
+                </div>
+                 <div class="gallery-item">
+                    <img src="./images/img_6.jpg" alt="Defined Spikes Hairstyle 4"> <!-- Placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="section-title">What Users Say</h2>
+            <div class="testimonial-slider">
+                <!-- Simple placeholder - replace with actual slider later -->
+                <p>"Finally, a wax that gives me the matte look I want without feeling heavy. The hold is incredible!"</p>
+                <span>- Alex R.</span>
+            </div>
+            <!-- Add more testimonials or slider controls here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section">
+        <div class="container">
+            <p>&copy; 2025 SPIKY Hair Wax. All Rights Reserved.</p>
+            <!-- Add social media links or other footer content if needed -->
+        </div>
+    </footer>
+
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Unobserve after animation to save resources
+                    // observer.unobserve(entry.target);
+                }
+                // Optional: Remove 'visible' class if element scrolls out of view
+                // else {
+                //     entry.target.classList.remove('visible');
+                // }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach((section) => {
+            // Don't observe the hero section if it should always be visible on load
+            if (!section.classList.contains('hero')) {
+                 observer.observe(section);
+            }
+        });
+
+        // Smooth scroll for internal links (like the CTA button)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
