@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPIKY Professional Hair Wax | Premium Matte Styling & Strong Hold</title>
-    <meta name="description" content="Discover SPIKY Professional Hair Wax for a premium matte finish and long-lasting strong hold. Expertly crafted for modern hairstyles, easy to apply and wash out.">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>SPIKY Pro | Premium Hair Styling Wax</title>
+    <meta name="description" content="SPIKY Professional Hair Wax delivers salon-quality texture, matte finish, and all-day hold. Transform your style with our premium formula crafted for modern hairstyles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Product",
       "name": "SPIKY Professional Hair Wax",
-      "image": [
-        "./images/img_2.jpg"
-       ],
-      "description": "Achieve salon-quality texture, definition, and a professional matte finish with SPIKY Hair Wax. Our premium formula offers a strong, long-lasting hold that keeps your style sharp all day, yet washes out easily. Crafted with hair-nourishing botanicals.",
+      "image": "/api/placeholder/600/600",
+      "description": "Premium matte finish hair wax with 24-hour strong hold, crafted with hair-nourishing botanicals for the modern styling professional and enthusiast.",
       "sku": "SPKY-WAX-100G",
-      "mpn": "987654321",
       "brand": {
         "@type": "Brand",
         "name": "SPIKY"
-      },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4.8",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Alex R."
-        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -41,809 +28,1211 @@
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://example.com/spiky-hair-wax",
+        "url": "https://example.com/spiky-pro-wax",
         "priceCurrency": "USD",
         "price": "19.99",
-        "priceValidUntil": "2025-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "SPIKY Professional"
-        }
+        "availability": "https://schema.org/InStock"
       }
     }
     </script>
     <style>
+        /* CSS Reset and Base Styles */
         :root {
-            --primary-color: #00ffee;
-            --secondary-color: #00ff88;
-            --text-color: #e0e0e0;
-            --bg-dark: #0f1a0f;
-            --bg-light-transparent: rgba(255, 255, 255, 0.03);
-            --bg-card: rgba(30, 30, 30, 0.6);
-            --border-color: rgba(0, 255, 238, 0.15);
-            --font-primary: 'Cinzel', serif;
-            --font-secondary: 'Poppins', sans-serif;
-            --header-height: 70px;
+            /* Color Variables */
+            --color-primary: #0061ff;
+            --color-primary-dark: #0052d9;
+            --color-secondary: #6c47ff;
+            --color-accent: #00d5ff;
+            --color-text: #1a1a1a;
+            --color-text-light: #555;
+            --color-text-lighter: #777;
+            --color-background: #ffffff;
+            --color-background-alt: #f8f9fa;
+            --color-border: #e5e7eb;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 5rem;
+            
+            /* Fonts */
+            --font-heading: 'Archivo', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            
+            /* Border Radius */
+            --radius-sm: 0.25rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 1rem;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition-base: all 0.3s ease;
+            --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
+        /* Modern CSS Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
+            font-size: 16px;
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         body {
-            font-family: var(--font-secondary);
-            background: linear-gradient(135deg, #1a2e1a 0%, var(--bg-dark) 100%);
-            color: var(--text-color);
-            overflow-x: hidden;
-            padding-top: var(--header-height);
+            font-family: var(--font-body);
+            font-weight: 400;
             line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            overflow-x: hidden;
         }
 
+        img, svg {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Layout & Container */
         .container {
-            width: 90%;
-            max-width: 1100px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 var(--spacing-md);
         }
 
         .section {
-            padding: 4rem 0;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: var(--header-height);
-            background: rgba(10, 10, 10, 0.88);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .logo {
-            font-family: var(--font-primary);
-            font-size: clamp(1.4rem, 3vw, 1.7rem);
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: clamp(1rem, 3vw, 2rem);
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
             position: relative;
-            padding-bottom: 8px;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2.5px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-            transition: width 0.35s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: #fff;
-            text-shadow: 0 0 8px rgba(0, 255, 238, 0.6);
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-
-        .hero {
-            min-height: calc(100vh - var(--header-height));
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle at center, #222 0%, #080808 100%);
-            padding: 2rem 1rem;
-            position: relative;
-        }
-
-        .product-title {
-            font-family: var(--font-primary);
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
-            margin-bottom: 0.8rem;
-            line-height: 1.15;
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 12px rgba(0, 255, 238, 0.35));
-            animation: pulse-glow 3.5s infinite ease-in-out;
-        }
-
-        .hero h2 {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            margin-bottom: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            letter-spacing: 0.8px;
-        }
-
-        .hero p {
-            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
-            margin-bottom: 1.2rem;
-            color: #b8b8b8;
-            max-width: 600px;
-        }
-
-        .hero p.hero-main-description {
-            text-align: left; /* Aligns text to the left within this specific paragraph */
-        }
-
-        .hero p.highlight {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-
-        .product-image {
-            width: clamp(200px, 35vw, 300px);
-            margin: 2rem 0;
-            filter: drop-shadow(0 0 25px rgba(0, 255, 238, 0.25));
-            transform: rotateY(-7deg) rotateX(3deg);
-            transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.5s ease;
-        }
-
-        .hero:hover .product-image {
-            transform: rotateY(0deg) rotateX(0deg) scale(1.07);
-            filter: drop-shadow(0 0 35px rgba(0, 255, 238, 0.35));
+            padding: var(--spacing-xl) 0;
         }
 
         .section-title {
-            font-family: var(--font-primary);
-            text-align: center;
-            font-size: clamp(2rem, 4.5vw, 2.6rem);
-            margin-bottom: 2.5rem;
-            color: var(--primary-color);
-            font-weight: 700;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: var(--spacing-lg);
             position: relative;
-            padding-bottom: 12px;
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 3rem;
+            height: 0.25rem;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            border-radius: var(--radius-full);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--color-text);
+        }
+
+        .logo span {
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: var(--spacing-md);
+            list-style: none;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--color-text);
+            padding: 0.5rem 0.75rem;
+            position: relative;
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--color-primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
             bottom: 0;
+            left: 0.75rem;
+            right: 0.75rem;
+            height: 2px;
+            background-color: var(--color-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--color-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: var(--spacing-xl);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .hero-subtitle {
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-title span {
+            display: block;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+            max-width: 540px;
+        }
+
+        .hero-image-container {
+            position: relative;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hero-image-container:hover .hero-image {
+            transform: rotate(-5deg) scale(1.05);
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 55px;
-            height: 2.5px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-secondary));
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: var(--transition-base);
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 97, 255, 0.15);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            box-shadow: 0 6px 15px rgba(0, 97, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 97, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--color-background-alt);
+            padding: var(--spacing-xxl) 0;
         }
 
         .features-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
         }
 
         .feature-card {
-            background: var(--bg-card);
-            padding: 2rem 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, background-color 0.35s ease;
-            text-align: center;
-            flex: 1 1 280px;
-            max-width: 350px;
+            background-color: var(--color-background);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
             display: flex;
             flex-direction: column;
-            align-items: center;
-        }
-
-        .feature-card i {
-            font-size: 2.3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.7rem;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .feature-card p {
-            color: #b8b8b8;
-            line-height: 1.65;
-            font-size: 0.95rem;
+            gap: var(--spacing-sm);
         }
 
         .feature-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 28px rgba(0, 255, 238, 0.15);
-            background-color: rgba(0, 255, 238, 0.04);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .why-us-grid {
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            border-radius: var(--radius-md);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        /* Usage Section */
+        .usage-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem;
-            margin-top: 2.5rem;
-        }
-
-        .why-us-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            background: var(--bg-light-transparent);
-            padding: 1.3rem;
-            border-radius: 10px;
-            border-left: 3.5px solid var(--secondary-color);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .why-us-item:hover {
-            background-color: rgba(0, 255, 136, 0.06);
-            transform: translateX(4px);
-        }
-
-        .why-us-item i {
-            font-size: 1.9rem;
-            color: var(--primary-color);
-            min-width: 30px;
-            margin-top: 0.1rem;
-        }
-
-        .why-us-item div {
-            flex: 1;
-        }
-
-        .why-us-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .why-us-item p {
-            font-size: 0.9rem;
-            color: #b8b8b8;
-        }
-
-        .how-to-use-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 2.5rem;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
         }
 
         .step {
-            display: flex;
-            align-items: center;
-            gap: 1.8rem;
-            background: var(--bg-card);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-        }
-
-        .step:nth-child(odd) {
-            flex-direction: row-reverse;
+            position: relative;
+            padding-left: var(--spacing-lg);
         }
 
         .step-number {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            opacity: 0.55;
-            min-width: 55px;
-            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--color-primary);
+            opacity: 0.15;
+            transform: translateY(-0.5rem);
         }
 
-        .step-content h4 {
+        .step-title {
             font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
         }
 
-        .step-content p {
-            color: #b8b8b8;
-            font-size: 0.95rem;
+        .step-description {
+            color: var(--color-text-light);
         }
 
-        .gallery-grid {
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(to bottom right, #f8f9ff, #f0f7ff);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .benefit-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-            justify-content: center;
-            margin-top: 2.5rem;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background-color: var(--color-background);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+
+        .benefit-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .benefit-content p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--spacing-md);
         }
 
         .gallery-item {
-            flex: 1 1 250px;
-            max-width: 300px;
-            border-radius: 10px;
+            position: relative;
+            border-radius: var(--radius-md);
             overflow: hidden;
-            border: 2.5px solid var(--border-color);
-            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.35s ease;
+            aspect-ratio: 1;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
         }
 
         .gallery-item:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 10px 25px rgba(0, 255, 238, 0.18);
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+            z-index: 1;
         }
 
-        .gallery-item:hover img {
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
             transform: scale(1.1);
         }
 
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--color-background-alt);
+        }
+
         .testimonial-slider {
-            text-align: center;
-            margin-top: 2.5rem;
-            padding: 2rem 1.5rem;
-            background: var(--bg-card);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--color-background);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            position: relative;
         }
 
-        .testimonial-slider p {
+        .testimonial-quote {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            position: relative;
             font-style: italic;
-            color: #c0c0c0;
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
-            line-height: 1.65;
+            color: var(--color-text);
+            line-height: 1.8;
         }
 
-        .testimonial-slider span {
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 1rem;
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -2rem;
+            left: -0.5rem;
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            opacity: 0.15;
+            line-height: 1;
         }
 
-        footer {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 3rem;
-            background-color: #080808;
-            color: #aaa;
-            font-size: 0.9rem;
+        .testimonial-author {
             display: flex;
-            justify-content: center;
             align-items: center;
+            gap: var(--spacing-sm);
         }
 
-        footer .container {
+        .author-image {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 2px solid var(--color-primary);
+            padding: 2px;
+        }
+
+        .author-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-title {
+            font-size: 0.875rem;
+            color: var(--color-text-lighter);
+        }
+
+        /* Product Details */
+        .product-details {
+            background: linear-gradient(to bottom, #fff, #f8f9fa);
+        }
+
+        .product-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            justify-content: flex-start;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .spec-item {
+            flex: 1 1 200px;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background-color: rgba(0, 97, 255, 0.03);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 97, 255, 0.1);
+        }
+
+        .spec-icon {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+        }
+
+        .spec-content h5 {
+            font-size: 0.875rem;
+            color: var(--color-text-lighter);
+            margin-bottom: 0.25rem;
+        }
+
+        .spec-content p {
+            font-weight: 600;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+        }
+
+        .video-container {
+            max-width: 850px;
+            margin: var(--spacing-xl) auto 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            aspect-ratio: 16/9;
+            background-color: #000;
+        }
+
+        .video-placeholder {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
         }
 
-        .cta-button {
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            color: var(--bg-dark);
-            padding: 0.9rem 2.6rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            margin-top: 1.8rem;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-base);
+        }
+
+        .play-button:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--color-primary-dark);
+        }
+
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+        }
+
+        .cta-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background-color: white;
+            color: var(--color-primary);
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+
+        .footer-link {
+            color: #b0b0b0;
             font-size: 0.95rem;
+            transition: var(--transition-base);
         }
 
-        .cta-button:hover {
-            transform: scale(1.06) translateY(-3px);
-            box-shadow: 0 9px 22px rgba(0, 255, 238, 0.22);
+        .footer-link:hover {
+            color: white;
+            transform: translateX(3px);
         }
 
-        @keyframes pulse-glow {
-            0% { filter: drop-shadow(0 0 10px rgba(0, 255, 238, 0.3)); }
-            50% { filter: drop-shadow(0 0 20px rgba(0, 255, 238, 0.5)); }
-            100% { filter: drop-shadow(0 0 10px rgba(0, 255, 238, 0.3)); }
+        .social-icons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
+        .social-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition-base);
+        }
+
+        .social-icon:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: #888;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .section {
+                padding: var(--spacing-lg) 0;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .hero {
+                padding-top: 7rem;
             }
         }
-
-        .section.visible .feature-card,
-        .section.visible .why-us-item,
-        .section.visible .step,
-        .section.visible .gallery-item,
-        .section.visible .testimonial-slider {
-            animation: fadeInUp 0.7s ease-out forwards;
-        }
-
-        .section.visible .feature-card:nth-child(1) { animation-delay: 0.1s; }
-        .section.visible .feature-card:nth-child(2) { animation-delay: 0.2s; }
-        .section.visible .feature-card:nth-child(3) { animation-delay: 0.3s; }
-        .section.visible .why-us-item:nth-child(1) { animation-delay: 0.1s; }
-        .section.visible .why-us-item:nth-child(2) { animation-delay: 0.2s; }
-        .section.visible .why-us-item:nth-child(3) { animation-delay: 0.3s; }
-        .section.visible .why-us-item:nth-child(4) { animation-delay: 0.4s; }
-        .section.visible .step:nth-child(1) { animation-delay: 0.1s; }
-        .section.visible .step:nth-child(2) { animation-delay: 0.25s; }
-        .section.visible .step:nth-child(3) { animation-delay: 0.4s; }
 
         @media (max-width: 768px) {
-            :root {
-                --header-height: 60px;
+            .header-container {
+                height: 4rem;
             }
-
-            body {
-                padding-top: var(--header-height);
-            }
-
-            .section {
-                padding: 3rem 0;
-            }
-
-            .section-title {
-                font-size: clamp(1.7rem, 5.5vw, 2rem);
-            }
-
-            nav ul {
+            
+            .nav-list {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: var(--shadow-md);
+                padding: var(--spacing-md);
+                gap: var(--spacing-sm);
+                z-index: 99;
             }
-
-            .logo {
-                font-size: 1.5rem;
+            
+            .nav-list.active {
+                display: flex;
             }
-
-            .hero {
-                padding: 1.5rem;
+            
+            .mobile-toggle {
+                display: block;
             }
-
-            .product-title {
-                font-size: clamp(2rem, 8vw, 3rem);
-            }
-
-            .hero h2 {
-                font-size: clamp(1rem, 4vw, 1.5rem);
-            }
-
-            .hero p {
-                font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-            }
-
-            .product-image {
-                width: clamp(180px, 50vw, 250px);
-                transform: rotateY(0deg) rotateX(0deg);
-            }
-
-            .hero:hover .product-image {
-                transform: scale(1.05);
-            }
-
-            .features-grid, .why-us-grid, .gallery-grid {
-                gap: 1.5rem;
-            }
-
-            .feature-card, .gallery-item {
-                flex-basis: 100%;
-                max-width: 100%;
-            }
-
-            .step {
-                flex-direction: column !important;
+            
+            .hero-container {
+                grid-template-columns: 1fr;
                 text-align: center;
-                gap: 1rem;
+                gap: var(--spacing-lg);
             }
-
-            .step-number {
-                margin-bottom: 0.5rem;
-                font-size: 2.5rem;
+            
+            .hero-image-container {
+                order: -1;
+                max-width: 50%;
+                margin: 0 auto;
             }
-
-            .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
+            
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .section-title {
+                text-align: center;
+                display: block;
+            }
+            
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
 
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
+        @media (max-width: 576px) {
+            :root {
+                --spacing-xxl: 3rem;
+                --spacing-xl: 2rem;
+                --spacing-lg: 1.5rem;
             }
-
-            .product-title {
-                font-size: clamp(1.8rem, 9vw, 2.5rem);
+            
+            .feature-card, .benefit-item {
+                padding: var(--spacing-md);
             }
-
-            .section-title {
-                font-size: clamp(1.5rem, 6vw, 1.8rem);
+            
+            .hero-title {
+                font-size: clamp(1.8rem, 8vw, 2.5rem);
+            }
+            
+            .testimonial-slider {
+                padding: var(--spacing-lg);
             }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">SPIKY</a>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo"><span>SPIKY</span> PRO</a>
+            <button class="mobile-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
             <nav>
-                <ul>
-                    <li><a href="#features" class="active">Features</a></li>
-                    <li><a href="#why-us">Benefits</a></li>
-                    <li><a href="#how-to-use">Application</a></li>
-                    <li><a href="#gallery">Showcase</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
+                <ul class="nav-list" id="navList">
+                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                    <li><a href="#usage" class="nav-link">How To Use</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#testimonials" class="nav-link">Reviews</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="section hero visible">
-        <div class="container">
-            <h1 class="product-title">SPIKY PROFESSIONAL HAIR WAX</h1>
-            <img src="./images/img_2.jpg" alt="SPIKY Professional Hair Wax product tub" class="product-image">
-            <h2>PREMIUM MATTE FINISH & ALL-DAY HOLD</h2>
-            <p class="hero-main-description">Unlock professional-grade matte styling with SPIKY Hair Wax. Our premium formula delivers salon-quality texture, definition, and a long-lasting hold that keeps your look sharp all day.</p>
-            <p class="highlight">Net Wt. 100g / 3.53 oz</p>
-            <a href="#features" class="cta-button">Explore Features</a>
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Professional Quality</p>
+                <h1 class="hero-title">SPIKY <span>Professional Hair Wax</span></h1>
+                <p class="hero-description">Achieve salon-quality texture, definition, and a professional matte finish with SPIKY Hair Wax. Experience premium styling with our long-lasting formula.</p>
+                <div class="hero-actions">
+                    <a href="#cta" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now - ₹350
+                    </a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-image-bg"></div>
+                <img src="./images/img_7.jpg" alt="SPIKY Professional Hair Wax" class="hero-image">
+            </div>
         </div>
     </section>
 
-    <section id="features" class="section">
+    <!-- Features Section -->
+    <section class="features section" id="features">
         <div class="container">
-            <h2 class="section-title">Core Product Features</h2>
+            <h2 class="section-title">Premium Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-signature"></i>
-                    <h3>Professional Matte Finish</h3>
-                    <p>Experience a true professional matte finish. Our wax provides a sophisticated, natural look without any unwanted shine, grease, or residue.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="feature-title">Professional Matte Finish</h3>
+                    <p class="feature-description">Our premium formula delivers a sophisticated, natural look without unwanted shine or greasy residue.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>24hr Strong Hold</h3>
-                    <p>Rely on our 24-hour strong hold. This industry-leading formula locks in your style, ensuring it withstands any activity, from morning to night.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">24hr Strong Hold</h3>
+                    <p class="feature-description">Industry-leading formula that locks in your style from morning to night, regardless of your activity level.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Nourishing Ingredients</h3>
-                    <p>Crafted with premium, hair-nourishing botanicals. Our wax is free from harsh chemicals and parabens, caring for your hair while you style.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">Nourishing Ingredients</h3>
+                    <p class="feature-description">Formulated with hair-nourishing botanicals that strengthen and protect while styling. Free from harsh chemicals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us" class="section">
+    <!-- Product Details Section -->
+    <section class="product-details section">
         <div class="container">
-            <h2 class="section-title">Why Choose SPIKY Wax?</h2>
-            <div class="why-us-grid">
-                <div class="why-us-item">
-                    <i class="fas fa-hand-rock"></i>
-                    <div>
-                        <h4>Unmatched Texture & Definition</h4>
-                        <p>Effortlessly create salon-quality definition and separation for a perfectly sculpted, modern hairstyle.</p>
+            <h2 class="section-title">Product Specifications</h2>
+            <div class="product-specs">
+                <div class="spec-item">
+                    <i class="fas fa-weight-hanging spec-icon"></i>
+                    <div class="spec-content">
+                        <h5>Net Weight</h5>
+                        <p>100g / 3.5oz</p>
                     </div>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-tint-slash"></i>
-                    <div>
-                        <h4>Effortless Wash-Out</h4>
-                        <p>Despite its professional-grade hold, SPIKY wax rinses out easily with standard shampoo, leaving no buildup.</p>
+                <div class="spec-item">
+                    <i class="fas fa-fill-drip spec-icon"></i>
+                    <div class="spec-content">
+                        <h5>Finish</h5>
+                        <p>Matte</p>
                     </div>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-recycle"></i>
-                    <div>
-                        <h4>Flexible All-Day Restyling</h4>
-                        <p>Our premium, reworkable formula allows you to adjust and refresh your style throughout the day without needing more product.</p>
+                <div class="spec-item">
+                    <i class="fas fa-hand-rock spec-icon"></i>
+                    <div class="spec-content">
+                        <h5>Hold Strength</h5>
+                        <p>Strong, All-Day</p>
                     </div>
                 </div>
-                <div class="why-us-item">
-                    <i class="fas fa-wind"></i>
-                    <div>
-                        <h4>Resists Humidity & Wind</h4>
-                        <p>Maintain your sharp, professional look in any weather. Our advanced formula offers superior protection against humidity and wind.</p>
+                <div class="spec-item">
+                    <i class="fas fa-spa spec-icon"></i>
+                    <div class="spec-content">
+                        <h5>Key Ingredients</h5>
+                        <p>Botanical Extracts</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-to-use" class="section">
-        <div class="container">
-            <h2 class="section-title">How to Apply SPIKY Wax</h2>
-            <div class="how-to-use-steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h4>Scoop & Warm</h4>
-                        <p>Begin with a small, pea-sized amount. Rub between palms to warm and emulsify the wax until smooth and pliable.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h4>Apply Evenly</h4>
-                        <p>Distribute thoroughly through dry or slightly damp hair. Work from roots to tips for complete coverage and foundational hold.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h4>Sculpt Your Look</h4>
-                        <p>Define spikes, build texture, or craft your signature messy style. Layer more product if needed for enhanced hold and definition.</p>
+                 <div class="spec-item">
+                    <i class="fas fa-ban spec-icon"></i>
+                    <div class="spec-content">
+                        <h5>Free From</h5>
+                        <p>Parabens, Sulfates</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="section">
+    <!-- Usage Section -->
+    <section class="section" id="usage">
         <div class="container">
-            <h2 class="section-title">Hairstyle Showcase</h2>
+            <h2 class="section-title">How to Use SPIKY Pro</h2>
+            <div class="usage-steps">
+                <div class="step">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title">Start with Dry Hair</h3>
+                    <p class="step-description">For best results, apply to clean, towel-dried or completely dry hair.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">02</span>
+                    <h3 class="step-title">Emulsify Wax</h3>
+                    <p class="step-description">Scoop a small amount, rub between palms until warm and evenly distributed.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">03</span>
+                    <h3 class="step-title">Apply & Style</h3>
+                    <p class="step-description">Work through hair from roots to tips. Sculpt, define, and create your desired look.</p>
+                </div>
+                 <div class="step">
+                    <span class="step-number">04</span>
+                    <h3 class="step-title">Refine Your Look</h3>
+                    <p class="step-description">Add more product for stronger hold or definition. SPIKY Pro is buildable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Unlock Your Style Potential</h2>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <i class="fas fa-magic benefit-icon"></i>
+                    <div class="benefit-content">
+                        <h4>Versatile Styling</h4>
+                        <p>Perfect for various hairstyles, from textured crops to slicked-back looks.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-tint-slash benefit-icon"></i>
+                    <div class="benefit-content">
+                        <h4>No Flaking or Residue</h4>
+                        <p>Our advanced formula ensures a clean finish without white flakes or build-up.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-shower benefit-icon"></i>
+                    <div class="benefit-content">
+                        <h4>Easy Washout</h4>
+                        <p>Washes out easily with water and shampoo, leaving no stubborn residue.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-wind benefit-icon"></i>
+                    <div class="benefit-content">
+                        <h4>Weather Resistant</h4>
+                        <p>Maintains hold and texture even in humid conditions or light rain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Style Inspirations</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="./images/img_3.jpg" alt="Modern spiky hairstyle achieved with SPIKY wax">
+                    <img src="./images/img_8.jpeg" alt="Hairstyle 1 with SPIKY Pro" class="gallery-image">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_4.jpg" alt="Textured hairstyle with matte finish using SPIKY wax">
+                    <img src="./images/img_9.jpeg" alt="Hairstyle 2 with SPIKY Pro" class="gallery-image">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_5.jpg" alt="Casual messy look styled with SPIKY hair wax">
+                    <img src="./images/img_10.jpeg" alt="Hairstyle 3 with SPIKY Pro" class="gallery-image">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_6.jpg" alt="Defined spikes hairstyle with strong hold from SPIKY wax">
+                    <img src="./images/img_1.jpg" alt="Hairstyle 4 with SPIKY Pro" class="gallery-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="section">
+    <!-- Testimonials Section -->
+    <section class="testimonials section" id="testimonials">
         <div class="container">
-            <h2 class="section-title">Customer Experiences</h2>
+            <h2 class="section-title">What Our Users Say</h2>
             <div class="testimonial-slider">
-                <p>"Finally, a wax that gives me the perfect matte look I've been searching for without feeling heavy or greasy. The hold is incredible and lasts all day!"</p>
-                <span>- Alex R., Verified Buyer</span>
+                <p class="testimonial-quote">"SPIKY Pro is a game-changer! The hold is incredible, and the matte finish is exactly what I was looking for. My hair stays perfect all day long."</p>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/60/60?text=User" alt="Alex R." class="author-image">
+                    <div>
+                        <p class="author-name">Alex R.</p>
+                        <p class="author-title">Professional Barber</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="section">
+    <!-- Video Section -->
+    <section class="video-section section" id="video">
         <div class="container">
-            <p>&copy; <span id="currentYear">2025</span> SPIKY Hair Wax. All Rights Reserved. <br> Professional Styling Solutions.</p>
+            <h2 class="section-title">See SPIKY Pro in Action</h2>
+            <p>Watch how easy it is to achieve professional results with SPIKY Pro hair wax.</p>
+            <div class="video-container">
+                <img src="/api/placeholder/850/478?text=Video+Thumbnail" alt="SPIKY Pro Tutorial Thumbnail" class="video-placeholder">
+                <div class="play-button" id="playVideoButton">
+                    <i class="fas fa-play"></i>
+                </div>
+                <!-- Replace with actual iframe when video is ready -->
+                <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta section" id="cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Elevate Your Style?</h2>
+            <p class="cta-description">Join thousands of satisfied customers and experience the SPIKY Pro difference. Get your premium hair wax today and unlock your best look.</p>
+            <a href="#" class="btn btn-cta">
+                <i class="fas fa-shopping-bag"></i>
+                Order SPIKY Pro Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-column">
+                <h4><span>SPIKY</span> PRO</h4>
+                <p style="color: #b0b0b0; font-size: 0.95rem;">Crafting confidence, one style at a time. Premium hair wax for the modern individual.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#features" class="footer-link">Features</a></li>
+                    <li><a href="#benefits" class="footer-link">Benefits</a></li>
+                    <li><a href="#usage" class="footer-link">How To Use</a></li>
+                    <li><a href="#gallery" class="footer-link">Gallery</a></li>
+                    <li><a href="#" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                    <li><a href="#" class="footer-link">Shipping Policy</a></li>
+                    <li><a href="#" class="footer-link">Returns & Exchanges</a></li>
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; <span id="currentYear"></span> SPIKY Professional. All Rights Reserved.
         </div>
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { 
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navList = document.getElementById('navList');
+        const navLinks = navList.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navList.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
 
-        document.querySelectorAll('.section:not(.hero)').forEach((section) => {
-            if (section.id) {
-                observer.observe(section);
-            }
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navList.classList.contains('active')) {
+                    navList.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
         });
         
-        const navLinks = document.querySelectorAll('nav a');
-        const sectionsForNav = Array.from(document.querySelectorAll('.section[id]'));
-
-        function changeNavActiveState() {
-            let currentSectionId = '';
-            const headerHeight = document.querySelector('header').offsetHeight;
-            
-            sectionsForNav.forEach(section => {
-                const sectionTop = section.offsetTop - headerHeight - 50;
-                if (window.scrollY >= sectionTop) {
-                    currentSectionId = section.id;
-                }
-            });
-
-            if (window.scrollY < sectionsForNav[0].offsetTop - headerHeight - 50) {
-                if (navLinks.length > 0) currentSectionId = navLinks[0].getAttribute('href').substring(1);
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
+        });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === currentSectionId) {
-                    link.classList.add('active');
+        // Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        function navHighlighter() {
+            let scrollY = window.pageYOffset;
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 100; // Adjusted offset
+                let sectionId = current.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-list a[href*=' + sectionId + ']').classList.add('active');
+                } else {
+                    document.querySelector('.nav-list a[href*=' + sectionId + ']').classList.remove('active');
                 }
             });
         }
-        
-        if (sectionsForNav.length > 0) {
-            changeNavActiveState();
-        }
-        window.addEventListener('scroll', changeNavActiveState);
+        window.addEventListener('scroll', navHighlighter);
+        window.addEventListener('load', navHighlighter); // Highlight on load
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = document.querySelector('header').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
+        // Copyright Year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Video Placeholder Click (Basic - for actual video, use YouTube API or similar)
+        const playVideoButton = document.getElementById('playVideoButton');
+        const videoContainer = document.querySelector('.video-container');
+        if (playVideoButton) {
+            playVideoButton.addEventListener('click', () => {
+                // Example: Replace placeholder with an iframe
+                // This is a simplified version. For robust video embedding, consider YouTube API or other libraries.
+                const videoPlaceholder = videoContainer.querySelector('.video-placeholder');
+                if (videoPlaceholder) videoPlaceholder.style.display = 'none';
+                playVideoButton.style.display = 'none';
+                
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('width', '100%');
+                iframe.setAttribute('height', '100%');
+                iframe.setAttribute('src', 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'); // Example video
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                videoContainer.appendChild(iframe);
+            });
+        }
+
     </script>
 </body>
 </html>
