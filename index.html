@@ -3,42 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPIKY Professional Hair Wax | Premium Matte Styling</title>
-    <meta name="description" content="Premium hair styling product delivering professional matte finish and long-lasting hold. Crafted for modern hairstyles.">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>SPIKY Professional Hair Wax | Premium Matte Styling & Strong Hold</title>
+    <meta name="description" content="Discover SPIKY Professional Hair Wax for a premium matte finish and long-lasting strong hold. Expertly crafted for modern hairstyles, easy to apply and wash out.">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "SPIKY Professional Hair Wax",
+      "image": [
+        "./images/img_2.jpg"
+       ],
+      "description": "Achieve salon-quality texture, definition, and a professional matte finish with SPIKY Hair Wax. Our premium formula offers a strong, long-lasting hold that keeps your style sharp all day, yet washes out easily. Crafted with hair-nourishing botanicals.",
+      "sku": "SPKY-WAX-100G",
+      "mpn": "987654321",
+      "brand": {
+        "@type": "Brand",
+        "name": "SPIKY"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "4.8",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Alex R."
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "137"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://example.com/spiky-hair-wax",
+        "priceCurrency": "USD",
+        "price": "19.99",
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "SPIKY Professional"
+        }
+      }
+    }
+    </script>
     <style>
+        :root {
+            --primary-color: #00ffee;
+            --secondary-color: #00ff88;
+            --text-color: #e0e0e0;
+            --bg-dark: #0f1a0f;
+            --bg-light-transparent: rgba(255, 255, 255, 0.03);
+            --bg-card: rgba(30, 30, 30, 0.6);
+            --border-color: rgba(0, 255, 238, 0.15);
+            --font-primary: 'Cinzel', serif;
+            --font-secondary: 'Poppins', sans-serif;
+            --header-height: 70px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: linear-gradient(135deg, #1a2e1a 0%, #0f1a0f 100%);
-            color: #e0e0e0;
+            font-family: var(--font-secondary);
+            background: linear-gradient(135deg, #1a2e1a 0%, var(--bg-dark) 100%);
+            color: var(--text-color);
             overflow-x: hidden;
-            perspective: 1000px;
-            padding-top: 70px;
+            padding-top: var(--header-height);
+            line-height: 1.6;
         }
 
         .container {
+            width: 90%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
         }
 
         .section {
-            min-height: auto;
             padding: 4rem 0;
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s ease-out, transform 0.9s ease-out;
-            border-bottom: 1px solid rgba(0, 255, 238, 0.05);
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .section:last-child {
+        .section:last-of-type {
             border-bottom: none;
         }
 
@@ -47,67 +111,144 @@
             transform: translateY(0);
         }
 
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(10, 10, 10, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-primary);
+            font-size: clamp(1.4rem, 3vw, 1.7rem);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2.5px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            transition: width 0.35s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #fff;
+            text-shadow: 0 0 8px rgba(0, 255, 238, 0.6);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
         .hero {
+            min-height: calc(100vh - var(--header-height));
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align content to the top */
+            justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #2a2a2a 0%, #0a0a0a 100%);
-            min-height: 100vh;
-            padding: 6rem 1.5rem 4rem; /* Add top padding for spacing */
+            background: radial-gradient(circle at center, #222 0%, #080808 100%);
+            padding: 2rem 1rem;
             position: relative;
         }
 
         .product-title {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem); /* Adjust font size for balance */
-            margin-bottom: 1rem; /* Add spacing below the title */
-            line-height: 1.2;
-            background: linear-gradient(45deg, #00ff88, #00ffee);
+            font-family: var(--font-primary);
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            margin-bottom: 0.8rem;
+            line-height: 1.15;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(0, 255, 238, 0.3));
-            animation: pulse-glow 4s infinite ease-in-out;
+            filter: drop-shadow(0 0 12px rgba(0, 255, 238, 0.35));
+            animation: pulse-glow 3.5s infinite ease-in-out;
         }
 
         .hero h2 {
-            font-size: clamp(1.2rem, 3vw, 2rem); /* Slightly smaller subtitle */
-            margin-bottom: 1rem;
-            color: #00ffee;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 1.2rem;
+            color: var(--primary-color);
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         .hero p {
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            margin-bottom: 1rem;
-            color: #b0b0b0;
+            font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+            margin-bottom: 1.2rem;
+            color: #b8b8b8;
             max-width: 600px;
         }
 
+        .hero p.hero-main-description {
+            text-align: left; /* Aligns text to the left within this specific paragraph */
+        }
+
+        .hero p.highlight {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
         .product-image {
-            width: clamp(200px, 40vw, 300px); /* Adjust image size */
-            margin: 2rem 0; /* Add spacing above and below the image */
-            filter: drop-shadow(0 0 20px rgba(0, 255, 238, 0.2));
-            transform: rotateY(-8deg) rotateX(4deg);
-            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.6s ease;
+            width: clamp(200px, 35vw, 300px);
+            margin: 2rem 0;
+            filter: drop-shadow(0 0 25px rgba(0, 255, 238, 0.25));
+            transform: rotateY(-7deg) rotateX(3deg);
+            transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.5s ease;
         }
 
         .hero:hover .product-image {
-            transform: rotateY(0deg) rotateX(0deg) scale(1.05);
-            filter: drop-shadow(0 0 40px rgba(0, 255, 238, 0.3));
+            transform: rotateY(0deg) rotateX(0deg) scale(1.07);
+            filter: drop-shadow(0 0 35px rgba(0, 255, 238, 0.35));
         }
 
         .section-title {
-            font-family: 'Cinzel', serif;
+            font-family: var(--font-primary);
             text-align: center;
-            font-size: 2.4rem;
+            font-size: clamp(2rem, 4.5vw, 2.6rem);
             margin-bottom: 2.5rem;
-            color: #00ffee;
+            color: var(--primary-color);
             font-weight: 700;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .section-title::after {
@@ -116,87 +257,102 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #00ff88, #00ffee);
+            width: 55px;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
         }
 
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
+            justify-content: center;
             margin-top: 2.5rem;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--bg-card);
             padding: 2rem 1.5rem;
             border-radius: 12px;
-            border: 1px solid rgba(0, 255, 238, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+            border: 1px solid var(--border-color);
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease, background-color 0.35s ease;
             text-align: center;
+            flex: 1 1 280px;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .feature-card i {
-            font-size: 2.2rem;
-            color: #00ff88;
+            font-size: 2.3rem;
+            color: var(--secondary-color);
             margin-bottom: 1rem;
-            display: block;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.6rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.7rem;
             color: #fff;
+            font-weight: 600;
         }
 
         .feature-card p {
-            color: #b0b0b0;
-            line-height: 1.6;
+            color: #b8b8b8;
+            line-height: 1.65;
+            font-size: 0.95rem;
         }
 
         .feature-card:hover {
-            transform: translateY(-8px) scale(1.02) rotateY(5deg);
-            box-shadow: 0 12px 25px rgba(0, 255, 238, 0.12);
-            background-color: rgba(0, 255, 238, 0.03);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 28px rgba(0, 255, 238, 0.15);
+            background-color: rgba(0, 255, 238, 0.04);
         }
 
         .why-us-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
             margin-top: 2.5rem;
         }
 
         .why-us-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
-            background: rgba(255, 255, 255, 0.02);
-            padding: 1.2rem;
+            background: var(--bg-light-transparent);
+            padding: 1.3rem;
             border-radius: 10px;
-            border-left: 3px solid #00ff88;
-            transition: background-color 0.3s ease;
+            border-left: 3.5px solid var(--secondary-color);
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .why-us-item:hover {
-            background-color: rgba(0, 255, 136, 0.05);
+            background-color: rgba(0, 255, 136, 0.06);
+            transform: translateX(4px);
         }
 
         .why-us-item i {
-            font-size: 1.8rem;
-            color: #00ffee;
+            font-size: 1.9rem;
+            color: var(--primary-color);
             min-width: 30px;
+            margin-top: 0.1rem;
+        }
+
+        .why-us-item div {
+            flex: 1;
         }
 
         .why-us-item h4 {
-            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
             color: #fff;
+            font-weight: 600;
         }
 
         .why-us-item p {
             font-size: 0.9rem;
-            color: #b0b0b0;
+            color: #b8b8b8;
         }
 
         .how-to-use-steps {
@@ -212,11 +368,11 @@
         .step {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 1.2rem;
+            gap: 1.8rem;
+            background: var(--bg-card);
+            padding: 1.5rem;
             border-radius: 10px;
-            border: 1px solid rgba(0, 255, 238, 0.08);
+            border: 1px solid var(--border-color);
         }
 
         .step:nth-child(odd) {
@@ -224,104 +380,133 @@
         }
 
         .step-number {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            color: #00ff88;
-            opacity: 0.5;
-            min-width: 50px;
+            color: var(--secondary-color);
+            opacity: 0.55;
+            min-width: 55px;
             text-align: center;
         }
 
         .step-content h4 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
-            color: #00ffee;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         .step-content p {
-            color: #b0b0b0;
+            color: #b8b8b8;
+            font-size: 0.95rem;
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
             margin-top: 2.5rem;
+        }
+
+        .gallery-item {
+            flex: 1 1 250px;
+            max-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2.5px solid var(--border-color);
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+            cursor: pointer;
         }
 
         .gallery-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            border-radius: 10px;
-            border: 2px solid rgba(0, 255, 238, 0.1);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
+            transition: transform 0.35s ease;
         }
 
-        .gallery-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 255, 238, 0.15);
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 10px 25px rgba(0, 255, 238, 0.18);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
         .testimonial-slider {
             text-align: center;
             margin-top: 2.5rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            border: 1px solid rgba(0, 255, 238, 0.1);
+            padding: 2rem 1.5rem;
+            background: var(--bg-card);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .testimonial-slider p {
             font-style: italic;
-            color: #b0b0b0;
-            margin-bottom: 1rem;
+            color: #c0c0c0;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.65;
         }
 
         .testimonial-slider span {
             font-weight: 600;
-            color: #00ff88;
+            color: var(--secondary-color);
+            font-size: 1rem;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 2.5rem 1rem;
             margin-top: 3rem;
-            background-color: #111;
-            color: #888;
+            background-color: #080808;
+            color: #aaa;
             font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer .container {
+            width: 100%;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #00ff88, #00ffee);
-            color: #000;
-            padding: 0.9rem 2.5rem;
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: var(--bg-dark);
+            padding: 0.9rem 2.6rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1.8rem;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
             display: inline-block;
             text-decoration: none;
+            font-size: 0.95rem;
         }
 
         .cta-button:hover {
-            transform: scale(1.05) translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 255, 238, 0.2);
+            transform: scale(1.06) translateY(-3px);
+            box-shadow: 0 9px 22px rgba(0, 255, 238, 0.22);
         }
 
         @keyframes pulse-glow {
-            0% { filter: drop-shadow(0 0 12px rgba(0, 255, 238, 0.3)); }
-            50% { filter: drop-shadow(0 0 22px rgba(0, 255, 238, 0.5)); }
-            100% { filter: drop-shadow(0 0 12px rgba(0, 255, 238, 0.3)); }
+            0% { filter: drop-shadow(0 0 10px rgba(0, 255, 238, 0.3)); }
+            50% { filter: drop-shadow(0 0 20px rgba(0, 255, 238, 0.5)); }
+            100% { filter: drop-shadow(0 0 10px rgba(0, 255, 238, 0.3)); }
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 1;
@@ -334,142 +519,119 @@
         .section.visible .step,
         .section.visible .gallery-item,
         .section.visible .testimonial-slider {
-            animation: fadeInUp 0.6s ease-out forwards;
+            animation: fadeInUp 0.7s ease-out forwards;
         }
 
         .section.visible .feature-card:nth-child(1) { animation-delay: 0.1s; }
         .section.visible .feature-card:nth-child(2) { animation-delay: 0.2s; }
         .section.visible .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .section.visible .why-us-item:nth-child(1) { animation-delay: 0.1s; }
+        .section.visible .why-us-item:nth-child(2) { animation-delay: 0.2s; }
+        .section.visible .why-us-item:nth-child(3) { animation-delay: 0.3s; }
+        .section.visible .why-us-item:nth-child(4) { animation-delay: 0.4s; }
+        .section.visible .step:nth-child(1) { animation-delay: 0.1s; }
+        .section.visible .step:nth-child(2) { animation-delay: 0.25s; }
+        .section.visible .step:nth-child(3) { animation-delay: 0.4s; }
 
         @media (max-width: 768px) {
+            :root {
+                --header-height: 60px;
+            }
+
+            body {
+                padding-top: var(--header-height);
+            }
+
             .section {
                 padding: 3rem 0;
             }
+
             .section-title {
-                font-size: 1.8rem;
-            }
-            .features-grid, .why-us-grid, .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            .step {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            .step-number {
-                margin-bottom: 1rem;
-            }
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-            .hero p {
-                font-size: 0.9rem;
-            }
-            .cta-button {
-                padding: 0.7rem 2rem;
-            }
-            .product-image {
-                transform: rotateY(0deg) rotateX(0deg);
-            }
-            .feature-card:hover {
-                transform: translateY(-5px) scale(1.01);
-            }
-            body {
-                padding-top: 60px;
-            }
-
-            header {
-                padding: 0.6rem 0;
-            }
-
-            .logo {
-                font-size: 1.3rem;
+                font-size: clamp(1.7rem, 5.5vw, 2rem);
             }
 
             nav ul {
                 display: none;
             }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .product-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .hero h2 {
+                font-size: clamp(1rem, 4vw, 1.5rem);
+            }
+
+            .hero p {
+                font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+            }
+
+            .product-image {
+                width: clamp(180px, 50vw, 250px);
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+
+            .hero:hover .product-image {
+                transform: scale(1.05);
+            }
+
+            .features-grid, .why-us-grid, .gallery-grid {
+                gap: 1.5rem;
+            }
+
+            .feature-card, .gallery-item {
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+
+            .step {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .step-number {
+                margin-bottom: 0.5rem;
+                font-size: 2.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(0, 255, 238, 0.1);
-            transition: background-color 0.3s ease;
-        }
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
 
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            .product-title {
+                font-size: clamp(1.8rem, 9vw, 2.5rem);
+            }
 
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: #00ffee;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(90deg, #00ff88, #00ffee);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: #fff;
-            text-shadow: 0 0 5px rgba(0, 255, 238, 0.5);
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
+            .section-title {
+                font-size: clamp(1.5rem, 6vw, 1.8rem);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
-        <div class="nav-container">
+        <div class="container nav-container">
             <a href="#" class="logo">SPIKY</a>
             <nav>
                 <ul>
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="#features" class="active">Features</a></li>
                     <li><a href="#why-us">Benefits</a></li>
                     <li><a href="#how-to-use">Application</a></li>
                     <li><a href="#gallery">Showcase</a></li>
@@ -480,32 +642,34 @@
     </header>
 
     <section class="section hero visible">
-        <h1 class="product-title">SPIKY HAIR WAX</h1>
-        <img src="./images/img_2.jpg" alt="Spiky Hair Wax Product" class="product-image">
-        <h2>PROFESSIONAL MATTE STYLING</h2>
-        <p>Achieve salon-quality texture and definition with our premium styling formula. Professional-grade hold that lasts all day.</p>
-        <p class="highlight">100g / 3.53 oz</p>
-        <a href="#features" class="cta-button">Discover More</a>
+        <div class="container">
+            <h1 class="product-title">SPIKY PROFESSIONAL HAIR WAX</h1>
+            <img src="./images/img_2.jpg" alt="SPIKY Professional Hair Wax product tub" class="product-image">
+            <h2>PREMIUM MATTE FINISH & ALL-DAY HOLD</h2>
+            <p class="hero-main-description">Unlock professional-grade matte styling with SPIKY Hair Wax. Our premium formula delivers salon-quality texture, definition, and a long-lasting hold that keeps your look sharp all day.</p>
+            <p class="highlight">Net Wt. 100g / 3.53 oz</p>
+            <a href="#features" class="cta-button">Explore Features</a>
+        </div>
     </section>
 
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">Premium Features</h2>
+            <h2 class="section-title">Core Product Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-signature"></i>
                     <h3>Professional Matte Finish</h3>
-                    <p>Achieve a salon-quality, natural appearance with zero shine. No grease, no residue.</p>
+                    <p>Experience a true professional matte finish. Our wax provides a sophisticated, natural look without any unwanted shine, grease, or residue.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-clock"></i>
-                    <h3>24h Professional Hold</h3>
-                    <p>Industry-leading formulation secures your style through any activity, day or night.</p>
+                    <h3>24hr Strong Hold</h3>
+                    <p>Rely on our 24-hour strong hold. This industry-leading formula locks in your style, ensuring it withstands any activity, from morning to night.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-leaf"></i>
-                    <h3>Premium Ingredients</h3>
-                    <p>Expertly crafted with hair-nourishing botanicals. Free from harsh chemicals and parabens.</p>
+                    <h3>Nourishing Ingredients</h3>
+                    <p>Crafted with premium, hair-nourishing botanicals. Our wax is free from harsh chemicals and parabens, caring for your hair while you style.</p>
                 </div>
             </div>
         </div>
@@ -513,34 +677,34 @@
 
     <section id="why-us" class="section">
         <div class="container">
-            <h2 class="section-title">Superior Benefits</h2>
+            <h2 class="section-title">Why Choose SPIKY Wax?</h2>
             <div class="why-us-grid">
                 <div class="why-us-item">
                     <i class="fas fa-hand-rock"></i>
                     <div>
-                        <h4>Professional Texture</h4>
-                        <p>Creates salon-quality definition and separation for the perfect styled look.</p>
+                        <h4>Unmatched Texture & Definition</h4>
+                        <p>Effortlessly create salon-quality definition and separation for a perfectly sculpted, modern hairstyle.</p>
                     </div>
                 </div>
                 <div class="why-us-item">
                     <i class="fas fa-tint-slash"></i>
                     <div>
-                        <h4>Easy Removal</h4>
-                        <p>Professional-grade hold with simple wash-out properties. Rinses clean with standard shampoo.</p>
+                        <h4>Effortless Wash-Out</h4>
+                        <p>Despite its professional-grade hold, SPIKY wax rinses out easily with standard shampoo, leaving no buildup.</p>
                     </div>
                 </div>
                 <div class="why-us-item">
                     <i class="fas fa-recycle"></i>
                     <div>
-                        <h4>Adjustable Styling</h4>
-                        <p>Our premium formula allows for restyling throughout the day without additional product.</p>
+                        <h4>Flexible All-Day Restyling</h4>
+                        <p>Our premium, reworkable formula allows you to adjust and refresh your style throughout the day without needing more product.</p>
                     </div>
                 </div>
                 <div class="why-us-item">
                     <i class="fas fa-wind"></i>
                     <div>
-                        <h4>Environmental Protection</h4>
-                        <p>Advanced formulation resists humidity and wind, maintaining your professional look.</p>
+                        <h4>Resists Humidity & Wind</h4>
+                        <p>Maintain your sharp, professional look in any weather. Our advanced formula offers superior protection against humidity and wind.</p>
                     </div>
                 </div>
             </div>
@@ -549,27 +713,27 @@
 
     <section id="how-to-use" class="section">
         <div class="container">
-            <h2 class="section-title">Get The Look</h2>
+            <h2 class="section-title">How to Apply SPIKY Wax</h2>
             <div class="how-to-use-steps">
                 <div class="step">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <h4>Scoop</h4>
-                        <p>Start with a small, pea-sized amount of wax. Warm it between your palms until smooth.</p>
+                        <h4>Scoop & Warm</h4>
+                        <p>Begin with a small, pea-sized amount. Rub between palms to warm and emulsify the wax until smooth and pliable.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h4>Apply</h4>
-                        <p>Work evenly through dry or slightly damp hair, starting from the roots to tips.</p>
+                        <h4>Apply Evenly</h4>
+                        <p>Distribute thoroughly through dry or slightly damp hair. Work from roots to tips for complete coverage and foundational hold.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h4>Style</h4>
-                        <p>Define your spikes, create texture, or shape your desired messy look. Add more product if needed for extra hold.</p>
+                        <h4>Sculpt Your Look</h4>
+                        <p>Define spikes, build texture, or craft your signature messy style. Layer more product if needed for enhanced hold and definition.</p>
                     </div>
                 </div>
             </div>
@@ -578,19 +742,19 @@
 
     <section id="gallery" class="section">
         <div class="container">
-            <h2 class="section-title">Style Inspiration</h2>
+            <h2 class="section-title">Hairstyle Showcase</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="./images/img_3.jpg" alt="Spiky Hairstyle 1">
+                    <img src="./images/img_3.jpg" alt="Modern spiky hairstyle achieved with SPIKY wax">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_4.jpg" alt="Textured Hairstyle 2">
+                    <img src="./images/img_4.jpg" alt="Textured hairstyle with matte finish using SPIKY wax">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_5.jpg" alt="Messy Look Hairstyle 3">
+                    <img src="./images/img_5.jpg" alt="Casual messy look styled with SPIKY hair wax">
                 </div>
                 <div class="gallery-item">
-                    <img src="./images/img_6.jpg" alt="Defined Spikes Hairstyle 4">
+                    <img src="./images/img_6.jpg" alt="Defined spikes hairstyle with strong hold from SPIKY wax">
                 </div>
             </div>
         </div>
@@ -598,17 +762,17 @@
 
     <section id="testimonials" class="section">
         <div class="container">
-            <h2 class="section-title">What Users Say</h2>
+            <h2 class="section-title">Customer Experiences</h2>
             <div class="testimonial-slider">
-                <p>"Finally, a wax that gives me the matte look I want without feeling heavy. The hold is incredible!"</p>
-                <span>- Alex R.</span>
+                <p>"Finally, a wax that gives me the perfect matte look I've been searching for without feeling heavy or greasy. The hold is incredible and lasts all day!"</p>
+                <span>- Alex R., Verified Buyer</span>
             </div>
         </div>
     </section>
 
     <footer class="section">
         <div class="container">
-            <p>&copy; 2025 SPIKY Hair Wax. All Rights Reserved.</p>
+            <p>&copy; <span id="currentYear">2025</span> SPIKY Hair Wax. All Rights Reserved. <br> Professional Styling Solutions.</p>
         </div>
     </footer>
 
@@ -621,14 +785,45 @@
             });
         }, { 
             threshold: 0.1,
-            rootMargin: "-70px 0px -50% 0px"
+            rootMargin: "0px 0px -50px 0px"
         });
 
-        document.querySelectorAll('.section').forEach((section) => {
-            if (!section.classList.contains('hero') && section.id) {
+        document.querySelectorAll('.section:not(.hero)').forEach((section) => {
+            if (section.id) {
                 observer.observe(section);
             }
         });
+        
+        const navLinks = document.querySelectorAll('nav a');
+        const sectionsForNav = Array.from(document.querySelectorAll('.section[id]'));
+
+        function changeNavActiveState() {
+            let currentSectionId = '';
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            sectionsForNav.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 50;
+                if (window.scrollY >= sectionTop) {
+                    currentSectionId = section.id;
+                }
+            });
+
+            if (window.scrollY < sectionsForNav[0].offsetTop - headerHeight - 50) {
+                if (navLinks.length > 0) currentSectionId = navLinks[0].getAttribute('href').substring(1);
+            }
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        if (sectionsForNav.length > 0) {
+            changeNavActiveState();
+        }
+        window.addEventListener('scroll', changeNavActiveState);
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -637,8 +832,8 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     const headerOffset = document.querySelector('header').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
 
                     window.scrollTo({
                         top: offsetPosition,
@@ -647,6 +842,8 @@
                 }
             });
         });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
