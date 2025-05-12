@@ -35,6 +35,8 @@
       }
     }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         /* CSS Reset and Base Styles */
         :root {
@@ -306,6 +308,8 @@
             position: relative;
             z-index: 1;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+            transition: transform 0.3s cubic-bezier(.25,.46,.45,.94);
         }
 
         .hero-image-container:hover .hero-image {
@@ -324,6 +328,8 @@
             filter: blur(40px);
             opacity: 0.15;
             z-index: 0;
+            transition: transform 0.6s cubic-bezier(.25,.46,.45,.94);
+            will-change: transform;
         }
 
         /* Buttons */
@@ -871,6 +877,17 @@
                 padding: var(--spacing-lg);
             }
         }
+
+        /* Animate-in for sections */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(60px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(.25,.46,.45,.94), transform 0.7s cubic-bezier(.25,.46,.45,.94);
+        }
+        .animate-in.visible {
+            opacity: 1;
+            transform: none;
+        }
     </style>
 </head>
 <body>
@@ -1249,6 +1266,59 @@
             });
         }
 
+        // 3D Tilt Effect for Hero Image (like iPhone site)
+        const heroImageContainer = document.querySelector('.hero-image-container');
+        const heroImage = document.querySelector('.hero-image');
+        const heroBg = document.querySelector('.hero-image-bg');
+        if (heroImageContainer && heroImage && heroBg) {
+            heroImageContainer.addEventListener('mousemove', (e) => {
+                const rect = heroImageContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateY = ((x - centerX) / centerX) * 12; // max 12deg
+                const rotateX = -((y - centerY) / centerY) * 12;
+                heroImage.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.07)`;
+                heroBg.style.transform = `translate(-50%, -50%) scale(1.08) translateY(${rotateX*2}px) translateX(${rotateY*2}px)`;
+            });
+            heroImageContainer.addEventListener('mouseleave', () => {
+                heroImage.style.transform = '';
+                heroBg.style.transform = 'translate(-50%, -50%)';
+            });
+        }
+
+        // Parallax on scroll for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            if (heroImage) {
+                heroImage.style.transform = `perspective(900px) translateY(${scrolled * 0.08}px)`;
+            }
+            if (heroBg) {
+                heroBg.style.transform = `translate(-50%, -50%) scale(1.05) translateY(${scrolled * 0.04}px)`;
+            }
+        });
+
+        // GSAP Animate-in for sections (like iPhone product page)
+        document.querySelectorAll('.features-grid .feature-card, .gallery-item, .benefit-item, .testimonial-slider, .cta').forEach(el => {
+            el.classList.add('animate-in');
+        });
+
+        gsap.utils.toArray('.animate-in').forEach(el => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                    toggleClass: {targets: el, className: "visible"},
+                    once: true
+                }
+            });
+        });
+
+        // Animate hero text on load
+        gsap.from('.hero-title', {y: 60, opacity: 0, duration: 1, ease: "power3.out"});
+        gsap.from('.hero-description', {y: 40, opacity: 0, duration: 0.8, delay: 0.3, ease: "power3.out"});
+        gsap.from('.hero-actions .btn', {y: 30, opacity: 0, duration: 0.7, delay: 0.6, stagger: 0.15, ease: "power3.out"});
     </script>
 </body>
 </html>
