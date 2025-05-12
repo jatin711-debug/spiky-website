@@ -38,17 +38,17 @@
     <style>
         /* CSS Reset and Base Styles */
         :root {
-            /* Color Variables */
-            --color-primary: #B76E79; /* Rose Gold */
-            --color-primary-dark: #9E5C68; /* Slightly darker Rose Gold for hover */
-            --color-secondary: #B76E79; /* Rose Gold as secondary */
-            --color-accent: #B76E79; /* Rose Gold as accent */
-            --color-text: #121212; /* Jet Black for body text */
-            --color-text-light: #333333; /* Slightly lighter Jet Black for secondary info */
-            --color-text-lighter: #555555; /* Even lighter for muted text */
-            --color-background: #F3E5DC; /* Warm Nude */
-            --color-background-alt: #EAD5CB; /* Slightly darker Warm Nude for alt backgrounds */
-            --color-border: #DCC5BA; /* Muted Warm Nude for borders */
+            /* Updated Color Variables */
+            --color-primary: #1C1C1C; /* Charcoal Gray */
+            --color-primary-dark: #0F0F0F; /* Darker Charcoal Gray for hover */
+            --color-secondary: #007BFF; /* Electric Blue */
+            --color-accent: #FF3B30; /* Vibrant Red */
+            --color-text: #1C1C1C; /* Charcoal Gray for body text */
+            --color-text-light: #4A4A4A; /* Slightly lighter Charcoal Gray for secondary info */
+            --color-text-lighter: #7A7A7A; /* Even lighter for muted text */
+            --color-background: #F5F5F5; /* Off-White */
+            --color-background-alt: #EDEDED; /* Slightly darker Off-White for alt backgrounds */
+            --color-border: #DADADA; /* Muted gray for borders */
             
             /* Spacing */
             --spacing-xs: 0.5rem;
@@ -166,7 +166,7 @@
             left: 0;
             width: 100%;
             z-index: 100;
-            background-color: rgba(243, 229, 220, 0.98);
+            background-color: rgba(245, 245, 245, 0.98);
             backdrop-filter: blur(8px);
             box-shadow: var(--shadow-sm);
             transition: var(--transition-base);
@@ -280,7 +280,7 @@
 
         .hero-title span {
             display: block;
-            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -339,25 +339,25 @@
         }
 
         .btn-primary {
-            background-color: var(--color-primary);
-            color: #F3E5DC;
-            box-shadow: 0 4px 10px rgba(183, 110, 121, 0.15);
+            background-color: var(--color-secondary);
+            color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
         }
 
         .btn-primary:hover {
-            background-color: var(--color-primary-dark);
-            box-shadow: 0 6px 15px rgba(183, 110, 121, 0.25);
+            background-color: #0056b3;
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.25);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
+            color: var(--color-secondary);
+            border: 2px solid var(--color-secondary);
         }
 
         .btn-secondary:hover {
-            background-color: rgba(183, 110, 121, 0.08);
+            background-color: rgba(0, 123, 255, 0.08);
             transform: translateY(-2px);
         }
 
@@ -374,7 +374,7 @@
         }
 
         .feature-card {
-            background-color: #EAD5CB;
+            background-color: #EDEDED;
             border-radius: var(--radius-md);
             padding: var(--spacing-lg);
             box-shadow: var(--shadow-md);
@@ -396,7 +396,7 @@
             align-items: center;
             justify-content: center;
             background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: #F3E5DC;
+            color: #F5F5F5;
             border-radius: var(--radius-md);
             font-size: 1.25rem;
             margin-bottom: var(--spacing-sm);
@@ -449,7 +449,7 @@
 
         /* Benefits Section */
         .benefits {
-            background: linear-gradient(to bottom right, #EAD5CB, #F3E5DC 80%);
+            background: linear-gradient(to bottom right, #EDEDED, #F5F5F5 80%);
         }
 
         .benefits-list {
@@ -462,7 +462,7 @@
             display: flex;
             gap: var(--spacing-md);
             padding: var(--spacing-md);
-            background-color: #EAD5CB;
+            background-color: #EDEDED;
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
             transition: var(--transition-base);
@@ -502,7 +502,7 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             aspect-ratio: 1;
-            background-color: #EAD5CB;
+            background-color: #EDEDED;
             box-shadow: var(--shadow-md);
             transition: var(--transition-base);
         }
@@ -532,7 +532,7 @@
         .testimonial-slider {
             max-width: 700px;
             margin: 0 auto;
-            background-color: #EAD5CB;
+            background-color: #EDEDED;
             border-radius: var(--radius-md);
             padding: var(--spacing-xl);
             box-shadow: var(--shadow-md);
@@ -586,7 +586,7 @@
 
         /* duct Details */
         .duct-details {
-            background: linear-gradient(to bottom, #EAD5CB, #F3E5DC 80%);
+            background: linear-gradient(to bottom, #EDEDED, #F5F5F5 80%);
         }
 
         .duct-specs {
@@ -602,10 +602,10 @@
             display: flex;
             align-items: center;
             gap: var(--spacing-sm);
-            background-color: rgba(183, 110, 121, 0.08);
+            background-color: rgba(0, 123, 255, 0.08);
             padding: var(--spacing-sm);
             border-radius: var(--radius-md);
-            border: 1px solid rgba(183, 110, 121, 0.15);
+            border: 1px solid rgba(0, 123, 255, 0.15);
         }
 
         .spec-icon {
@@ -656,13 +656,13 @@
             transform: translate(-50%, -50%);
             width: 4rem;
             height: 4rem;
-            background-color: var(--color-primary);
+            background-color: var(--color-secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: #F3E5DC;
+            color: #FFFFFF;
             font-size: 1.5rem;
             box-shadow: var(--shadow-lg);
             transition: var(--transition-base);
@@ -670,15 +670,15 @@
 
         .play-button:hover {
             transform: translate(-50%, -50%) scale(1.1);
-            background-color: var(--color-primary-dark);
+            background-color: #0056b3;
         }
 
         /* Call to Action */
         .cta {
             text-align: center;
             padding: var(--spacing-xxl) 0;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: #F3E5DC;
+            background: var(--color-accent);
+            color: #FFFFFF;
         }
 
         .cta-title {
@@ -694,8 +694,8 @@
         }
 
         .btn-cta {
-            background-color: #F3E5DC;
-            color: var(--color-primary);
+            background-color: #FFFFFF;
+            color: var(--color-accent);
             padding: 1rem 2.5rem;
             font-size: 1.125rem;
             border-radius: var(--radius-md);
@@ -709,7 +709,7 @@
 
         /* Footer */
         .footer {
-            background-color: #EAD5CB;
+            background-color: var(--color-background-alt);
             color: var(--color-text-lighter);
             padding: var(--spacing-xl) 0;
         }
@@ -757,7 +757,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba(183, 110, 121, 0.08);
+            background-color: rgba(0, 123, 255, 0.08);
             color: var(--color-secondary);
             font-size: 1.2rem;
             transition: var(--transition-base);
@@ -765,7 +765,7 @@
 
         .social-icon:hover {
             background-color: var(--color-secondary);
-            color: #F3E5DC;
+            color: #FFFFFF;
             transform: translateY(-3px);
         }
 
@@ -775,7 +775,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             font-size: 0.875rem;
-            color: #B76E79;
+            color: #007BFF;
         }
 
         /* Media Queries */
@@ -877,7 +877,10 @@
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="#" class="logo"><span>SPIKY</span></a>
+            <a href="#" class="logo">
+                <img src="./images/img_11.jpg" alt="SPIKY Logo" class="logo-image" style="width: 60px; height: 60px; margin-right: 0.5rem;">
+                <span>SPIKY</span>
+            </a>
             <button class="mobile-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -910,7 +913,7 @@
             </div>
             <div class="hero-image-container">
                 <div class="hero-image-bg"></div>
-                <img src="./images/img_11.jpg" alt="SPIKY Professional Hair Wax" class="hero-image">
+                <img src="./images/img_7.jpg" alt="SPIKY Professional Hair Wax" class="hero-image">
             </div>
         </div>
     </section>
